@@ -1,9 +1,13 @@
 Package: pkgDemo
 Type: Package
-Title: What the Package Does (Title Case)
+Title: What the Package Does (Title Case) 
+    (65 character (one line)description)
 Version: 0.1.0
-Author: Sawhney and VanLandschoot
-Maintainer: The package maintainer <yourself@somewhere.net>
+Authors@R: c(
+    person("Amrita", "Sawhney", email = "amsawhney@reed.edu", 
+    role = c("aut","cre"),
+    person("Maxwell", "VanLandschoot", email = "maxvanlan@reed.edu", 
+    role = c("aut", "cre"))
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
@@ -13,3 +17,4 @@ Depends:
     R (>= 2.10)
 RoxygenNote: 7.1.1
 Imports: 
+    (Insert packages with commas between)
