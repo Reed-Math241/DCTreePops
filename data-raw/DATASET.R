@@ -1,4 +1,4 @@
-## code to prepare `DC_tree_pop` dataset goes here
+## code to prepare `DC_tree_pop_sf` dataset goes here
 
 #Libraries loaded
 library(tidyverse)
@@ -53,5 +53,4 @@ DC_tree_pop_sf <- left_join(DC_pop2, tree_pop_count) %>%
   mutate(Tree_density_km2 = as.numeric(n/(ALAND/1e+6))) %>%
   rename(Trees_per_tract = n, Shape_area = Shape__Are, Shape_length = Shape__Len)
 
-
-usethis::use_data(DATASET, overwrite = TRUE)
+usethis::use_data(DC_tree_pop_sf, overwrite = TRUE)
