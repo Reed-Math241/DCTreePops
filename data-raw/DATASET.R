@@ -51,6 +51,17 @@ tree_pop_count <- count(as_tibble(tree_in_tract), GEOID)
 DC_tree_pop_sf <- left_join(DC_pop2, tree_pop_count) %>%
   mutate(Tree_density_mi2 = as.numeric(n/(ALAND/2.59e+6))) %>%
   mutate(Tree_density_km2 = as.numeric(n/(ALAND/1e+6))) %>%
-  rename(Trees_per_tract = n, Shape_area = Shape__Are, Shape_length = Shape__Len)
+  rename(trees_per_tract = n, 
+         shape_area = Shape__Are, 
+         shape_length = Shape__Len,
+         object_ID = OBJECTID,
+         name = NAME,
+         land_area = ALAND,
+         water_area = AWATER,
+         total_pop = Total_Pop,
+         total_pop_moe = Total_Pop_MoE,
+         pop_density = Pop_density_km2,
+         tree_density = Tree_density_km2) %>%
+  subset(select = -c(Pop_density_mi2, Tree_density_mi2))
 
-usethis::use_data(DC_tree_pop_sf, overwrite = TRUE)
+usethis::use_data(DC_Tree_Pop_sf, overwrite = TRUE)

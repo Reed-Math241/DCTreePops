@@ -1,20 +1,22 @@
 Package: pkgGrpt
 Type: Package
-Title: DC_Trees 
-    Combines data on the trees and people of Washington D.C. to explore the relationships between population and tree density.
+Title: DC_Tree_Pop_sf 
+Combines data on the trees and people of Washington D.C. to explore the relationships between population and tree density.
 Version: 0.1.0
 Authors@R: c(
     person("Amrita", "Sawhney", email = "amsawhney@reed.edu", 
     role = c("aut","cre"),
     person("Maxwell", "VanLandschoot", email = "maxvanlan@reed.edu", 
     role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: 
+    DC_Tree_Pop combines data from the U.S. Census Bureau and DC GIS to explore how population and tree density relate. 
+The data are composed of 179 unique, spatially defined census-tracts and include additional information on an area's GeoID,
+land area composition, and size. This data would be useful for anyone interested in a more macro-level analysis of tree population
+or for someone interested in investigating the effects of urban expansion and the environment in Washington D.C.  
 License: CC0
 Encoding: UTF-8
 LazyData: true
 Depends:
     R (>= 2.10)
 RoxygenNote: 7.1.1
-Imports: none or just tidyverse?
-    (Insert packages with commas between)
+Suggestions: tidyverse
