@@ -15,26 +15,28 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Insert Package Name
+# DC_Trees
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of XXX is to ...
+The goal of DC_Trees is to seamlessly combine data on the trees and people of Washington D.C. to explore the relationships between population and tree density. 
 
 ## Installation
 
-The development version of XXX is available from [GitHub](https://github.com/) with:
+The development version of DC_Trees is available from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Reed-Math241/pkgDemo")
+devtools::install_github("Reed-Math241/pkgGrpt")
 ```
+
+## About the Data
+
 ## Example
 
-
 ```{r example}
-library(pkgDemo)
+library(pkgGrpt)
 ```
 
 
