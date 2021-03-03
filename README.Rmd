@@ -15,30 +15,73 @@ knitr::opts_chunk$set(
 )
 ```
 
-# DC_Trees
+# DCTreePops
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of DC_Trees is to seamlessly combine data on the trees and people of Washington D.C. to explore the relationships between population and tree density. 
+The goal of DCTreePops is to seamlessly combine spatial data on the trees and people of Washington D.C. to explore the relationships between population and tree density. 
 
 ## Installation
 
-The development version of DC_Trees is available from [GitHub](https://github.com/) with:
+The development version of DCTreePops is available from [GitHub](https://github.com/) with:
 
-``` r
+```r
 # install.packages("devtools")
 devtools::install_github("Reed-Math241/pkgGrpt")
 ```
 
 ## About the Data
+The data were collected and made freely available by the U.S. Census Bureau and DC GIS. 
+Further, the data are comprised of observations from each of Washington DC's 179 subdivisions and 13 variables divided into three broad categories: physical geographic data, population data, and tree data. For geographic data we have the GEO ID, Census Tract name, geometric shape (including length and area), and respective land and water area. Then, for both population and trees, we have raw estimates and density values. Please note, too, that all of our units are in metric.
+
+```{r}
+library(DCTreePops)
+data(package = 'DCTreePops')
+```
+
+```{r}
+library(tidyverse)
+glimpse(DCTreePops)
+```
 
 ## Example
 
-```{r example}
-library(DCTreePops)
+The most unique aspect of our package is the accessible and easy to use spatial data. The graphic below depicts one such usage. 
+```{r include = FALSE, eval = TRUE}
+ggplot(DCTreePops, aes(fill = tree_density)) +
+  geom_sf() +
+  scale_fill_gradient(low = "#fff2cc",
+                      high = "#4c1130") +
+  labs(x = "Longitude",
+       y = "Latitude",
+       title = "Tree Density in Washington D.C.",
+       fill = "Tree Density")
 ```
 
+The core question this data package gets at is: what is the relationship between the density of people and trees in Washington DC? The following graph is one such investigation of that question. 
+
+```{r, include = FALSE, eval = TRUE}
+DCTreePops %>%
+  ggplot(aes(x = pop_density, y = tree_density)) +
+    geom_point(color = "#4c1130") +
+    geom_smooth(se = TRUE, color = "#55a6a3", fill = "#55a6a3", 
+                method = loess,
+                formula = y ~ x) +
+    labs(x = "People per Square Kilometer",
+         y = "Trees per Square Kilometer",
+         title = "Population and Tree Density in Washington D.C.") +
+    theme(panel.background = element_rect(fill = "#fff2cc",
+                                          color = "#fff2cc",
+                                          size = 0.5, 
+                                          linetype = "solid"),
+          panel.grid.major = element_line(size = 0.5, 
+                                          linetype = 'solid',
+                                          colour = "white"), 
+          panel.grid.minor = element_line(size = 0.25, 
+                                          linetype = 'solid',
+                                          colour = "white"))
+```
 
 
 
