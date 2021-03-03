@@ -12,11 +12,11 @@ library(tmap)
 
 
 #loading population data as spatial
-DC_pop <- readOGR("data-raw", layer = "ACS_2018_Population_Variables_Tract")
+DC_pop <- readOGR(".", layer = "ACS_2018_Population_Variables_Tract")
 
 
 #tidying tree data and making it spatial
-Urban_Forestry_Street_Trees <- read_csv("data-raw/Urban_Forestry_Street_Trees.csv")
+Urban_Forestry_Street_Trees <- read_csv("./Urban_Forestry_Street_Trees.csv")
 
 DC_trees <- Urban_Forestry_Street_Trees %>%
   dplyr::select(X, Y, FACILITYID, VICINITY, SCI_NM, OBJECTID, GLOBALID, WARD) %>%
