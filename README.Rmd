@@ -36,7 +36,7 @@ devtools::install_github("Reed-Math241/pkgGrpt")
 ## Example
 
 ```{r example}
-library(pkgGrpt)
+library(DC_Tree_Pop_sf)
 ```
 
 

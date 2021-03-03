@@ -57,7 +57,7 @@ DC_Tree_Pop_sf <- left_join(DC_pop2, tree_pop_count) %>%
   rename(trees_per_tract = n, 
          shape_area = Shape__Are, 
          shape_length = Shape__Len,
-         object_ID = OBJECTID,
+         object_id = OBJECTID,
          name = NAME,
          land_area = ALAND,
          water_area = AWATER,

@@ -1,0 +1,25 @@
+#' Amounts of trees and people in DC, divided by Census tract areas
+#'
+#' Spatial data including counts of people and trees per Census tract, 
+#' density calculations for people and tree populations for each tract area, 
+#' and relevant geographical measurements (land area, water area, spatial geometry information)
+#' 
+#' @format A simple features data frame with 179 rows and 13 variables:
+#' \describe{
+#'   \item{object_id}{an identification variable for each observation in the dataset}
+#'   \item{geo_id}{a spatial identification variable specifying the location of each observation (FIPS code)}
+#'   \item{name}{a character denoting the the observation's Census tract name ("Census Tract xxx.xx")}
+#'   \item{land_area}{an integer denoting the area of land covered by a Census tract (square meters)}
+#'   \item{water_area}{an integer denoting the area of water included in a Census tract (square meters)}
+#'   \item{shape_length}{a number denoting the length of the Census tract's spatial shape}
+#'   \item{shape_area}{a number denoting the area of the Census tract's spatial shape}
+#'   \item{total_pop}{an integer denoting the population count of an observation}
+#'   \item{total_pop_moe}{an integer denoting the margin of error on an observation's population count}
+#'   \item{pop_density}{a number denoting the the human population density in square kilometers(total_pop/(land_area/1e+6))}
+#'   \item{trees_per_tract}{an integer denoting the tree count of an observation's Census tract}
+#'   \item{tree_density}{a number denoting the the tree population density in square kilometers(trees_per_tract/(land_area/1e+6))}
+#'   \item{geometry}{a spatial variable containing multipolygon lists to specify Census tract geometries}
+#' }
+#' @source {DC Population Tract Data: American Community Survey 2018 Population Tract} \url{https://opendata.dc.gov/datasets/acs-2018-population-variables-tract?geometry=-78.958%2C38.524%2C-75.071%2C39.272&orderBy=NAME}
+#' @source {DC Tree Data: Urban Forestry Street Trees} \url{https://opendata.dc.gov/datasets/f6c3c04113944f23a7993f2e603abaf2_23?geometry=-94.802%2C35.213%2C-63.711%2C41.247}
+"DC_Tree_Pop_sf"
