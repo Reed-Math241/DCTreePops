@@ -47,16 +47,23 @@ glimpse(DCTreePops)
 
 ## Example
 
-The most unique aspect of our package is the accessible and easy to use spatial data. The graphic below depicts one such usage. 
+The most unique aspect of our package is the accessible and easy to use spatial data. The graphic below depicts one such usage.
+
 ```{r echo = FALSE, eval = TRUE}
-ggplot(DCTreePops, aes(fill = tree_density)) +
-  geom_sf() +
-  scale_fill_gradient(low = "#fff2cc",
-                      high = "#4c1130") +
-  labs(x = "Longitude",
-       y = "Latitude",
-       title = "Tree Density in Washington D.C.",
-       fill = "Tree Density")
+DCTreePops <- DCTreePops %>%
+  mutate(trees_per_person = trees_per_tract/total_pop) %>%
+  mutate(trees_per_person = case_when(trees_per_person >= 10 ~ NA_real_,
+                                      TRUE ~ as.double(trees_per_person)))
+
+DCTreePops %>%
+  ggplot(aes(fill = trees_per_person)) +
+    geom_sf() +
+    scale_fill_gradient(low = "#fff2cc",
+                        high = "#4c1130") +
+    labs(x = "Longitude",
+         y = "Latitude",
+         title = "Trees per Person in Washington D.C.",
+         fill = "Trees per Person")
 ```
 
 The core question this data package gets at is: what is the relationship between the density of people and trees in Washington DC? The following graph is one such investigation of that question. 

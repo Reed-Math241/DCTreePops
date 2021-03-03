@@ -44,7 +44,7 @@ data(package = 'DCTreePops')
 library(tidyverse)
 #> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 #> ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-#> ✓ tibble  3.0.6     ✓ dplyr   1.0.4
+#> ✓ tibble  3.1.0     ✓ dplyr   1.0.4
 #> ✓ tidyr   1.1.2     ✓ stringr 1.4.0
 #> ✓ readr   1.4.0     ✓ forcats 0.5.0
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -72,6 +72,7 @@ glimpse(DCTreePops)
 
 The most unique aspect of our package is the accessible and easy to use
 spatial data. The graphic below depicts one such usage.
+
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 The core question this data package gets at is: what is the relationship
