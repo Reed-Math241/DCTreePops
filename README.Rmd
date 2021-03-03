@@ -61,7 +61,7 @@ ggplot(DCTreePops, aes(fill = tree_density)) +
 
 The core question this data package gets at is: what is the relationship between the density of people and trees in Washington DC? The following graph is one such investigation of that question. 
 
-```{r example}
+```{r}
 DCTreePops %>%
   ggplot(aes(x = pop_density, y = tree_density)) +
     geom_point(color = "#4c1130") +
