@@ -10,11 +10,14 @@ library(raster)
 library(units)
 library(tmap)
 
+
 #loading population data as spatial
-DC_pop <- readOGR(".", layer = "ACS_2018_Population_Variables_Tract")
+DC_pop <- readOGR("data-raw", layer = "ACS_2018_Population_Variables_Tract")
 
 
 #tidying tree data and making it spatial
+Urban_Forestry_Street_Trees <- read_csv("data-raw/Urban_Forestry_Street_Trees.csv")
+
 DC_trees <- Urban_Forestry_Street_Trees %>%
   dplyr::select(X, Y, FACILITYID, VICINITY, SCI_NM, OBJECTID, GLOBALID, WARD) %>%
   rename(Latitude = Y, Longitude = X) %>%
@@ -47,8 +50,8 @@ DC_pop2 <- DC_pop %>%
 DC_tree_pop <- st_join(DC_trees2, DC_pop2, join = st_within)
 
 #tidying for final data set
-tree_pop_count <- count(as_tibble(tree_in_tract), GEOID)
-DC_tree_pop_sf <- left_join(DC_pop2, tree_pop_count) %>%
+tree_pop_count <- count(as_tibble(DC_tree_pop), GEOID)
+DC_Tree_Pop_sf <- left_join(DC_pop2, tree_pop_count) %>%
   mutate(Tree_density_mi2 = as.numeric(n/(ALAND/2.59e+6))) %>%
   mutate(Tree_density_km2 = as.numeric(n/(ALAND/1e+6))) %>%
   rename(trees_per_tract = n, 
@@ -61,7 +64,8 @@ DC_tree_pop_sf <- left_join(DC_pop2, tree_pop_count) %>%
          total_pop = Total_Pop,
          total_pop_moe = Total_Pop_MoE,
          pop_density = Pop_density_km2,
-         tree_density = Tree_density_km2) %>%
+         tree_density = Tree_density_km2,
+         geo_id = GEOID) %>%
   subset(select = -c(Pop_density_mi2, Tree_density_mi2))
 
 usethis::use_data(DC_Tree_Pop_sf, overwrite = TRUE)

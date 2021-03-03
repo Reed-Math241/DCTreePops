@@ -1,7 +1,7 @@
-Package: pkgGrpt
-Type: Package
-Title: DC_Tree_Pop_sf - Combines data on the trees and people of Washington D.C. to explore the relationships between population and tree density.
+Package: DC_Tree_Pop_sf
+Title: DC_Tree_Pop_sf
 Version: 0.1.0
+Date: 2021-03-01
 Authors@R: c(
     person("Amrita", "Sawhney", email = "amsawhney@reed.edu", 
     role = c("aut","cre")),
@@ -12,8 +12,6 @@ Description: DC_Tree_Pop combines data from the U.S. Census Bureau and DC GIS to
 License: CC0
 Encoding: UTF-8
 LazyData: true
-Depends:
-    R (>= 2.10)
 RoxygenNote: 7.1.1
-Suggests: 
-    tidyverse
+Depends: R (>= 2.10)
+Suggests: tidyverse
