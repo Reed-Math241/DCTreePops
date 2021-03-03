@@ -32,7 +32,6 @@ devtools::install_github("Reed-Math241/pkgGrpt")
 ```
 
 ## About the Data
-
 The data were collected and made freely available by the U.S. Census Bureau and DC GIS. 
 Further, the data are comprised of observations from each of Washington DC's 179 subdivisions and 13 variables divided into three broad categories: physical geographic data, population data, and tree data. For geographic data we have the GEO ID, Census Tract name, geometric shape (including length and area), and respective land and water area. Then, for both population and trees, we have raw estimates and density values. Please note, too, that all of our units are in metric.
 
@@ -62,7 +61,7 @@ ggplot(DCTreePops, aes(fill = tree_density)) +
 
 The core question this data package gets at is: what is the relationship between the density of people and trees in Washington DC? The following graph is one such investigation of that question. 
 
-```{r}
+```{r example}
 DCTreePops %>%
   ggplot(aes(x = pop_density, y = tree_density)) +
     geom_point(color = "#4c1130") +

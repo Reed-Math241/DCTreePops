@@ -37,10 +37,13 @@ metric.
 
 ``` r
 library(DCTreePops)
+<<<<<<< HEAD
 data(package = 'DCTreePops')
 ```
 
 ``` r
+=======
+>>>>>>> 238a845c4c9725ff6e7ea2ca66960b71752f52f5
 head(DCTreePops)
 #>   object_id      geo_id              name land_area water_area shape_length
 #> 1         1 11001000100    Census Tract 1   1907610     512798    16275.593
@@ -90,7 +93,11 @@ ggplot(DCTreePops, aes(fill = tree_density)) +
        fill = "Tree Density")
 ```
 
+<<<<<<< HEAD
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+=======
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+>>>>>>> 238a845c4c9725ff6e7ea2ca66960b71752f52f5
 
 The core question this data package gets at is: what is the relationship
 between the density of people and trees in Washington DC? The following
@@ -118,4 +125,8 @@ DCTreePops %>%
                                           colour = "white"))
 ```
 
+<<<<<<< HEAD
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+=======
+<img src="man/figures/README-example-1.png" width="100%" />
+>>>>>>> 238a845c4c9725ff6e7ea2ca66960b71752f52f5
