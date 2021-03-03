@@ -3,32 +3,19 @@
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.  -->
 
-<<<<<<< HEAD
-# DC\_Trees
-=======
 # DCTreePops
->>>>>>> db75c86b9bcce46fbd06be7ee6d1ddc9cbddcda6
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-<<<<<<< HEAD
-The goal of DC\_Trees is to seamlessly combine data on the trees and
-people of Washington D.C. to explore the relationships between
-=======
 The goal of DCTreePops is to seamlessly combine spatial data on the
 trees and people of Washington D.C. to explore the relationships between
->>>>>>> db75c86b9bcce46fbd06be7ee6d1ddc9cbddcda6
 population and tree density.
 
 ## Installation
 
-<<<<<<< HEAD
-The development version of DC\_Trees is available from
-=======
 The development version of DCTreePops is available from
->>>>>>> db75c86b9bcce46fbd06be7ee6d1ddc9cbddcda6
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -38,12 +25,6 @@ devtools::install_github("Reed-Math241/pkgGrpt")
 
 ## About the Data
 
-<<<<<<< HEAD
-## Example
-
-``` r
-library(DCTreePops)
-=======
 The data were collected and made freely available by the U.S. Census
 Bureau and DC GIS. Further, the data are comprised of observations from
 each of Washington DC’s 179 subdivisions and 13 variables divided into
@@ -63,7 +44,7 @@ data(package = 'DCTreePops')
 library(tidyverse)
 #> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 #> ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-#> ✓ tibble  3.1.0     ✓ dplyr   1.0.4
+#> ✓ tibble  3.0.6     ✓ dplyr   1.0.4
 #> ✓ tidyr   1.1.2     ✓ stringr 1.4.0
 #> ✓ readr   1.4.0     ✓ forcats 0.5.0
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -85,7 +66,6 @@ glimpse(DCTreePops)
 #> $ trees_per_tract <int> 2083, 84, 1514, 1766, 1954, 375, 1130, 2247, 817, 419,…
 #> $ tree_density    <dbl> 1091.9423, 166.8945, 1949.9328, 1747.1275, 1266.5620, …
 #> $ geometry        <list> [<-77.06470, -77.06469, -77.06470, -77.06471, -77.064…
->>>>>>> db75c86b9bcce46fbd06be7ee6d1ddc9cbddcda6
 ```
 
 ## Example
