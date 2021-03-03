@@ -51,7 +51,7 @@ DC_tree_pop <- st_join(DC_trees2, DC_pop2, join = st_within)
 
 #tidying for final data set
 tree_pop_count <- count(as_tibble(DC_tree_pop), GEOID)
-DC_Tree_Pop_sf <- left_join(DC_pop2, tree_pop_count) %>%
+DCTreePops <- left_join(DC_pop2, tree_pop_count) %>%
   mutate(Tree_density_mi2 = as.numeric(n/(ALAND/2.59e+6))) %>%
   mutate(Tree_density_km2 = as.numeric(n/(ALAND/1e+6))) %>%
   rename(trees_per_tract = n, 
@@ -68,4 +68,4 @@ DC_Tree_Pop_sf <- left_join(DC_pop2, tree_pop_count) %>%
          geo_id = GEOID) %>%
   subset(select = -c(Pop_density_mi2, Tree_density_mi2))
 
-usethis::use_data(DC_Tree_Pop_sf, overwrite = TRUE)
+usethis::use_data(DCTreePops, overwrite = TRUE)

@@ -1,6 +1,6 @@
-#' Amounts of trees and people in DC, divided by Census tract areas
+#' @title Amounts of trees and people in DC, divided by Census tract areas
 #'
-#' Spatial data including counts of people and trees per Census tract, 
+#' @description Spatial data including counts of people and trees per Census tract, 
 #' density calculations for people and tree populations for each tract area, 
 #' and relevant geographical measurements (land area, water area, spatial geometry information)
 #' 
@@ -20,6 +20,8 @@
 #'   \item{tree_density}{a number denoting the the tree population density in square kilometers(trees_per_tract/(land_area/1e+6))}
 #'   \item{geometry}{a spatial variable containing multipolygon lists to specify Census tract geometries}
 #' }
-#' @source {DC Population Tract Data: American Community Survey 2018 Population Tract} \url{https://opendata.dc.gov/datasets/acs-2018-population-variables-tract?geometry=-78.958%2C38.524%2C-75.071%2C39.272&orderBy=NAME}
-#' @source {DC Tree Data: Urban Forestry Street Trees} \url{https://opendata.dc.gov/datasets/f6c3c04113944f23a7993f2e603abaf2_23?geometry=-94.802%2C35.213%2C-63.711%2C41.247}
-"DC_Tree_Pop_sf"
+#' 
+#' @source \url{https://opendata.dc.gov/datasets/acs-2018-population-variables-tract}
+#' @source \url{https://opendata.dc.gov/datasets/f6c3c04113944f23a7993f2e603abaf2_23}
+#' 
+"DCTreePops"
