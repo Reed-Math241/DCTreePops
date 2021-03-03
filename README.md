@@ -92,7 +92,10 @@ glimpse(DCTreePops)
 
 The most unique aspect of our package is the accessible and easy to use
 spatial data. The graphic below depicts one such usage.
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 The core question this data package gets at is: what is the relationship
 between the density of people and trees in Washington DC? The following
 graph is one such investigation of that question.
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />

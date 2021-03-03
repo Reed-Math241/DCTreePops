@@ -48,7 +48,7 @@ glimpse(DCTreePops)
 ## Example
 
 The most unique aspect of our package is the accessible and easy to use spatial data. The graphic below depicts one such usage. 
-```{r include = FALSE, eval = TRUE}
+```{r echo = FALSE, eval = TRUE}
 ggplot(DCTreePops, aes(fill = tree_density)) +
   geom_sf() +
   scale_fill_gradient(low = "#fff2cc",
@@ -61,7 +61,7 @@ ggplot(DCTreePops, aes(fill = tree_density)) +
 
 The core question this data package gets at is: what is the relationship between the density of people and trees in Washington DC? The following graph is one such investigation of that question. 
 
-```{r, include = FALSE, eval = TRUE}
+```{r, echo = FALSE, eval = TRUE}
 DCTreePops %>%
   ggplot(aes(x = pop_density, y = tree_density)) +
     geom_point(color = "#4c1130") +
