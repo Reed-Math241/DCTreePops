@@ -25,15 +25,17 @@ devtools::install_github("Reed-Math241/pkgGrpt")
 
 ## About the Data
 
-The data were collected and made freely available by the U.S. Census
-Bureau and DC GIS. Further, the data are comprised of observations from
-each of Washington DC’s 179 subdivisions and 13 variables divided into
-three broad categories: physical geographic data, population data, and
-tree data. For geographic data we have the GEO ID, Census Tract name,
-geometric shape (including length and area), and respective land and
-water area. Then, for both population and trees, we have raw estimates
-and density values. Please note, too, that all of our units are in
-metric.
+The data were collected and made freely available by the [U.S. Census
+Bureau](https://opendata.dc.gov/datasets/acs-2018-population-variables-tract)
+and [DC
+GIS](https://opendata.dc.gov/datasets/f6c3c04113944f23a7993f2e603abaf2_23).
+Further, the data are comprised of observations from each of Washington
+DC’s 179 subdivisions and 13 variables divided into three broad
+categories: physical geographic data, population data, and tree data.
+For geographic data we have the GEO ID, Census Tract name, geometric
+shape (including length and area), and respective land and water area.
+Then, for both population and trees, we have raw estimates and density
+values. Please note, too, that all of our units are in metric.
 
 ``` r
 library(DCTreePops)
@@ -71,7 +73,11 @@ glimpse(DCTreePops)
 ## Example
 
 The most unique aspect of our package is the accessible and easy to use
-spatial data. The graphic below depicts one such usage.
+spatial data. We recommend using geom\_sf() within ggplot2 to display
+the spacial data in this set. The graphic below depicts one such usage
+of spacial data, and shows the ratio of trees to people in each Census
+tract. Please note that the National Mall was intentionally omitted from
+this particular graph because it dramatically skewed the scaling.
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
@@ -80,3 +86,7 @@ between the density of people and trees in Washington DC? The following
 graph is one such investigation of that question.
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+
+## License
+
+Data are available by CC-0 license –so have at it.

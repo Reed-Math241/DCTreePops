@@ -32,7 +32,8 @@ devtools::install_github("Reed-Math241/pkgGrpt")
 ```
 
 ## About the Data
-The data were collected and made freely available by the U.S. Census Bureau and DC GIS. 
+
+The data were collected and made freely available by the [U.S. Census Bureau](https://opendata.dc.gov/datasets/acs-2018-population-variables-tract) and [DC GIS](https://opendata.dc.gov/datasets/f6c3c04113944f23a7993f2e603abaf2_23). 
 Further, the data are comprised of observations from each of Washington DC's 179 subdivisions and 13 variables divided into three broad categories: physical geographic data, population data, and tree data. For geographic data we have the GEO ID, Census Tract name, geometric shape (including length and area), and respective land and water area. Then, for both population and trees, we have raw estimates and density values. Please note, too, that all of our units are in metric.
 
 ```{r}
@@ -47,7 +48,7 @@ glimpse(DCTreePops)
 
 ## Example
 
-The most unique aspect of our package is the accessible and easy to use spatial data. The graphic below depicts one such usage.
+The most unique aspect of our package is the accessible and easy to use spatial data. We recommend using geom_sf() within ggplot2 to display the spacial data in this set. The graphic below depicts one such usage of spacial data, and shows the ratio of trees to people in each Census tract. Please note that the National Mall was intentionally omitted from this particular graph because it dramatically skewed the scaling. 
 
 ```{r echo = FALSE, eval = TRUE}
 DCTreePops <- DCTreePops %>%
@@ -89,6 +90,10 @@ DCTreePops %>%
                                           linetype = 'solid',
                                           colour = "white"))
 ```
+
+## License
+
+Data are available by CC-0 license --so have at it.
 
 
 
