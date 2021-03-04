@@ -52,6 +52,9 @@ library(tidyverse)
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> x dplyr::filter() masks stats::filter()
 #> x dplyr::lag()    masks stats::lag()
+```
+
+``` r
 glimpse(DCTreePops)
 #> Rows: 179
 #> Columns: 13
@@ -79,13 +82,13 @@ of spacial data, and shows the ratio of trees to people in each Census
 tract. Please note that the National Mall was intentionally omitted from
 this particular graph because it dramatically skewed the scaling.
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 The core question this data package gets at is: what is the relationship
 between the density of people and trees in Washington DC? The following
 graph is one such investigation of that question.
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ## License
 
